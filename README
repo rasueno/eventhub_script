@@ -1,0 +1,31 @@
+# Eventhub script
+---
+### Introduction
+This is a simple jenkins job meant to be setup with the jenkinsfile and script on one job and the eventhub.ini in another. You can maintain the script to build eventhubs on your eventhub job while the developers who need eventhubs simply create the eventhub.ini on their repo.
+
+Script requires that your agent has the azure command line and terraform.
+
+### Prerequisites
+- Jenkins
+- One repo for the script
+- Separate dev repo
+- Agent has Azure CLI
+- Agent has terraform
+
+### File structure
+Repo1
+- Jenkinsfile
+- buildtf.sh
+
+Repo2
+- eventhub.ini
+
+### Job Setup
+Jenkins job requires the following parameters:
+- code_repo: repo name where the eventhub.ini can be found
+- branch_name: branch where the eventhub.ini can be found.
+- company: used for github enterprise, otherwise, use github
+- organization: used for github enterprise, otherwise, use github username
+- az_client_id: az credentials, use secrets
+- az_secret: az credentials, use secrets
+- az_tenant: az credentials, use secrets

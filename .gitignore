@@ -1,0 +1,5 @@
+*.tf
+*.tfvars
+*.ini
+.terraform*
+.DS_Store
